@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+    <article class="prose lg:prose-xl">
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold mb-4">{{ post.title }}</h1>
+            <p class="text-gray-600">{{ post.date }}</p>
+        </header>
+
+        <div class="markdown-content">
+            {{ post.content }}
+        </div>
+
+        <footer class="mt-12 pt-6 border-t border-gray-200">
+            <a href="/blog" class="text-blue-600 hover:text-blue-800">← Back to Blog</a>
+        </footer>
+    </article>
+</div>
+{% endblock %} 

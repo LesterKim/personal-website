@@ -6,6 +6,36 @@
     <title>{% block title %}{% endblock %} - Your Name</title>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/solidity.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+    <style>
+        .prose pre {
+            background-color: #f6f8fa;
+            border-radius: 6px;
+            padding: 16px;
+        }
+        .prose code {
+            color: #24292e;
+            background-color: rgba(27,31,35,0.05);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            font-size: 85%;
+        }
+        .prose pre code {
+            background-color: transparent;
+            padding: 0;
+            font-size: 100%;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <nav class="bg-white shadow-lg">

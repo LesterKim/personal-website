@@ -6,6 +6,7 @@ mod ports;
 use axum::{
     routing::get,
     Router,
+    extract::Path,
 };
 use tower_http::services::ServeDir;
 
@@ -20,6 +21,7 @@ async fn main() {
         .route("/bio", get(infrastructure::handlers::bio::handle_bio))
         .route("/services", get(infrastructure::handlers::services::handle_services))
         .route("/blog", get(infrastructure::handlers::blog::handle_blog))
+        .route("/blog/:id", get(infrastructure::handlers::blog::handle_blog_post))
         .nest_service("/static", ServeDir::new("static"));
 
     // Run the server
