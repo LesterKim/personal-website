@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Welcome</h1>
+    
+    <div class="prose lg:prose-xl">
+        <p class="mb-4">
+            Welcome to my personal website. I'm a software engineer and engineering manager 
+            specializing in early-stage, web3 startups.
+        </p>
+        
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a href="/bio" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <h2 class="text-xl font-semibold mb-2">About Me</h2>
+                <p class="text-gray-600">Learn more about my background and experience.</p>
+            </a>
+            
+            <a href="/services" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <h2 class="text-xl font-semibold mb-2">Services</h2>
+                <p class="text-gray-600">Discover how I can help your startup succeed.</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

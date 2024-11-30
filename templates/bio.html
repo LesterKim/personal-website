@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Bio{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+    <div class="flex flex-col md:flex-row items-start gap-8 mb-12">
+        <div class="w-48 h-48 flex-shrink-0">
+            <img 
+                src="https://placehold.co/400x400/1a56db/ffffff?text=Your+Photo" 
+                alt="Profile Photo" 
+                class="w-full h-full object-cover rounded-lg shadow-lg"
+            >
+        </div>
+        <div>
+            <h1 class="text-4xl font-bold mb-4">About Me</h1>
+            <p class="text-xl text-gray-700 mb-4">
+                I'm a software engineer and engineering manager specializing in early-stage, web3 startups. 
+                With extensive experience in building scalable applications and leading engineering teams, 
+                I help businesses navigate the complex landscape of blockchain technology and web development.
+            </p>
+        </div>
+    </div>
+
+    <div class="prose lg:prose-xl">
+        <h2 class="text-2xl font-semibold mt-6 mb-4">Experience</h2>
+        <div class="space-y-6">
+            {% for exp in experiences %}
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="font-semibold text-xl">{{ exp.title }}</h3>
+                <p class="text-gray-600">{{ exp.company }} • {{ exp.period }}</p>
+                <p class="mt-2">{{ exp.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-8 mb-4">Education</h2>
+        <div class="space-y-6">
+            {% for edu in education %}
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="font-semibold text-xl">{{ edu.school }}</h3>
+                <p class="text-gray-600">{{ edu.degree }} • {{ edu.year }}</p>
+                <p class="mt-2">{{ edu.details }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}  

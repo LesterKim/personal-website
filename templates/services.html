@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Services</h1>
+    
+    <div class="prose lg:prose-xl">
+        <p class="mb-8">
+            I offer specialized consulting services for early-stage web3 startups, 
+            helping them build robust and scalable solutions.
+        </p>
+
+        <div class="space-y-8">
+            {% for service in services %}
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4">{{ service.name }}</h2>
+                <p class="mb-4">{{ service.description }}</p>
+                <p class="text-gray-600">Price Range: {{ service.price_range }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %} 
